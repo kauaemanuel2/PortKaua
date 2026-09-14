@@ -200,6 +200,45 @@
   });
 
   /* ---------------------------------------------
+     SMOOTH SCROLL SEM HASH NA URL
+     Intercepta cliques em links âncora, faz scroll
+     suave manualmente e limpa a hash da barra de endereços.
+  --------------------------------------------- */
+  function cleanUrl(){
+    if (window.history && window.history.replaceState){
+      try {
+        window.history.replaceState(null, '', window.location.pathname + window.location.search);
+      } catch(e){}
+    }
+  }
+
+  document.addEventListener('click', function(e){
+    var link = e.target.closest && e.target.closest('a[href^="#"]');
+    if (!link) return;
+
+    var href = link.getAttribute('href');
+    if (!href || href === '#' || href.length < 2) return;
+
+    var target = document.querySelector(href);
+    if (!target) return;
+
+    e.preventDefault();
+
+    target.scrollIntoView({
+      behavior: reduceMotion ? 'auto' : 'smooth',
+      block: 'start'
+    });
+
+    cleanUrl();
+  });
+
+  // Se a página carregar já com uma hash na URL (ex: link compartilhado
+  // com #projetos), mantém o scroll inicial mas limpa a barra de endereços.
+  if (window.location.hash){
+    setTimeout(cleanUrl, 60);
+  }
+
+  /* ---------------------------------------------
      SCROLLSPY
   --------------------------------------------- */
   var navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-link'));
@@ -378,6 +417,7 @@
 
   backToTop.addEventListener('click', function(){
     window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    cleanUrl();
   });
 
   updateBackToTop();
