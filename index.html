@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kauã Emanuel — Desenvolvedor</title>
+<meta name="description" content="Portfólio de Kauã Emanuel, formado em Análise e Desenvolvimento de Sistemas e desenvolvedor júnior em Natal/RN." />
+<meta name="theme-color" content="#0D1017" />
+<link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR / TOPBAR -->
+  <aside class="sidebar" id="sidebar">
+    <a href="#inicio" class="logo">&lt;KE/&gt;<span class="logo-cursor">_</span></a>
+
+    <nav class="nav" id="nav" aria-label="Navegação principal">
+      <ul>
+        <li><a href="#inicio" class="nav-link active" data-section="inicio"><span class="nav-dot"></span><span data-i18n="nav.inicio">inicio.md</span></a></li>
+        <li><a href="#sobre" class="nav-link" data-section="sobre"><span class="nav-dot"></span><span data-i18n="nav.sobre">sobre.md</span></a></li>
+        <li><a href="#trajetoria" class="nav-link" data-section="trajetoria"><span class="nav-dot"></span><span data-i18n="nav.trajetoria">trajetoria.md</span></a></li>
+        <li><a href="#skills" class="nav-link" data-section="skills"><span class="nav-dot"></span><span data-i18n="nav.skills">skills.json</span></a></li>
+        <li><a href="#projetos" class="nav-link" data-section="projetos"><span class="nav-dot"></span><span data-i18n="nav.projetos">projetos.md</span></a></li>
+        <li><a href="#contato" class="nav-link" data-section="contato"><span class="nav-dot"></span><span data-i18n="nav.contato">contato.md</span></a></li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="socials">
+        <a class="social-btn" href="https://github.com/kauaemanuel2" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Kauã Emanuel">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 6 3 12 8 18"></polyline><polyline points="16 6 21 12 16 18"></polyline></svg>
+        </a>
+        <a class="social-btn" href="https://linkedin.com/in/kau%C3%A3-emanuel" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Kauã Emanuel">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="7" r="1.4" fill="currentColor" stroke="none"></circle><line x1="6" y1="11" x2="6" y2="18"></line><path d="M11 18v-5a3 3 0 0 1 6 0v5"></path><line x1="11" y1="11" x2="11" y2="18"></line></svg>
+        </a>
+        <a class="social-btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=kauaemanuel1210@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Enviar email para Kauã Emanuel pelo Gmail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><polyline points="3 7 12 13 21 7"></polyline></svg>
+        </a>
+      </div>
+
+      <div class="controls-row">
+        <div class="lang-toggle" id="langToggle" role="group" aria-label="Selecionar idioma / Select language">
+          <button class="lang-btn active" id="langPt" data-lang="pt" aria-pressed="true">PT</button>
+          <button class="lang-btn" id="langEn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+
+        <button class="theme-toggle" id="themeToggle" aria-label="Alternar entre tema claro e escuro">
+          <span class="toggle-track"><span class="toggle-thumb" id="toggleThumb">
+            <svg id="thumbIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><line x1="12" y1="2" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="22"></line><line x1="4.2" y1="4.2" x2="5.6" y2="5.6"></line><line x1="18.4" y1="18.4" x2="19.8" y2="19.8"></line><line x1="2" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="22" y2="12"></line><line x1="4.2" y1="19.8" x2="5.6" y2="18.4"></line><line x1="18.4" y1="5.6" x2="19.8" y2="4.2"></line></svg>
+          </span></span>
+          <span class="toggle-label" id="toggleLabel">modo escuro</span>
+        </button>
+      </div>
+
+      <span class="status-clock" id="statusClock">Natal, RN · --:--</span>
+    </div>
+  </aside>
+
+  <button class="mobile-bar" id="mobileToggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+    <svg id="hamburgerIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+  </button>
+
+  <!-- PRINCIPAL - MAIN -->
+  <main class="main">
+
+    <!-- HERO -->
+    <section id="inicio" class="section hero in-view">
+      <div class="hero-copy">
+        <img src="img/perfil.jpg" alt="Foto de perfil de Kauã Emanuel" class="hero-avatar" width="80" height="80" loading="eager" onerror="this.style.display='none'" />
+        <div class="hero-kicker" data-i18n="hero.kicker">disponível para trainee / júnior</div>
+        <h1>Kauã Emanuel<br/>Feliciano dos Santos</h1>
+        <div class="hero-role" data-i18n="hero.role">desenvolvedor(nível: "júnior", stack: "web")</div>
+        <p class="lede" data-i18n="hero.lede">Formado em Análise e Desenvolvimento de Sistemas, de Natal/RN, construindo aplicações do front ao banco de dados. Do atendimento ao cliente para a lógica de programação — a mesma vontade de resolver problema, agora em código.</p>
+        <div class="hero-cta">
+          <a href="#projetos" class="btn btn-primary">
+            <span data-i18n="hero.ctaProjects">Ver projetos</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+          <a href="Curriculo_Kauã.pdf" download="Curriculo-Kaua-Emanuel.pdf" type="application/pdf" class="btn btn-ghost">
+            <span data-i18n="hero.ctaResume">Baixar currículo</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="4" y1="20" x2="20" y2="20"></line></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="code-window">
+        <div class="code-window-bar">
+          <span class="dot dot-1"></span><span class="dot dot-2"></span><span class="dot dot-3"></span>
+          <span class="fname">kaua.js</span>
+        </div>
+        <div class="code-window-body" id="typeTarget" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="section">
+      <div class="section-head">
+        <span class="filetag" data-i18n="nav.sobre">sobre.md</span>
+        <h2 data-i18n="sobre.title">Sobre</h2>
+      </div>
+      <div class="about-grid">
+        <div>
+          <p data-i18n="sobre.p1">Concluinte em Análise e Desenvolvimento de Sistemas pela UNINASSAU, com formação concluída em Informática e Sistemas e experiência real em desenvolvimento web — do HTML e CSS até integração com APIs e banco de dados.</p>
+          <p data-i18n="sobre.p2">Além da programação, passei os últimos anos em funções de suporte administrativo e atendimento ao cliente, o que me deu uma base sólida em organização, resolução de problemas e comunicação — habilidades que carrego para dentro de cada projeto que construo.</p>
+          <p data-i18n="sobre.p3">Hoje busco minha primeira oportunidade como Desenvolvedor Júnior ou Trainee, com vontade de aprender rápido, escrever código limpo e evoluir junto de um time.</p>
+        </div>
+        <ul class="info-list">
+          <li>
+            <span class="label" data-i18n="sobre.labelFormacao">formação</span>
+            <span class="value" data-i18n="sobre.valueFormacao">Análise e Desenvolvimento de Sistemas — UNINASSAU</span>
+          </li>
+          <li>
+            <span class="label" data-i18n="sobre.labelLocal">localização</span>
+            <span class="value" data-i18n="sobre.valueLocal">Natal, Rio Grande do Norte</span>
+          </li>
+          <li>
+            <span class="label" data-i18n="sobre.labelFoco">foco atual</span>
+            <span class="value" data-i18n="sobre.valueFoco">Desenvolvimento Web · Júnior / Trainee</span>
+          </li>
+          <li>
+            <span class="label" data-i18n="sobre.labelStack">stack principal</span>
+            <span class="value">HTML · CSS · JavaScript · Java · SQL</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TRAJETORIA -->
+    <section id="trajetoria" class="section">
+      <div class="section-head">
+        <span class="filetag" data-i18n="nav.trajetoria">trajetoria.md</span>
+        <h2 data-i18n="trajetoria.title">Formação &amp; Experiência</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item">
+          <span class="tl-period" data-i18n="trajetoria.item1.period">Ago 2022 — Jul 2024</span>
+          <h3 data-i18n="trajetoria.item1.role">Jovem Aprendiz Administrativo</h3>
+          <span class="tl-org">Thomas Greg &amp; Sons</span>
+          <ul data-i18n-list="trajetoria.item1.bullets">
+            <li>Suporte às rotinas administrativas</li>
+            <li>Organização de documentos e planilhas</li>
+            <li>Controle de dados e relatórios em Excel</li>
+            <li>Apoio à equipe operacional</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-period" data-i18n="trajetoria.item2.period">2023 — 2026</span>
+          <h3 data-i18n="trajetoria.item2.role">Análise e Desenvolvimento de Sistemas</h3>
+          <span class="tl-org">Faculdade Maurício de Nassau (UNINASSAU)</span>
+          <ul data-i18n-list="trajetoria.item2.bullets">
+            <li>Formação em Informática e Sistemas</li>
+            <li>Base em lógica de programação, banco de dados e desenvolvimento web</li>
+          </ul>
+        </div>
+
+        <div class="tl-item is-current">
+          <span class="tl-period" data-i18n="trajetoria.item3.period">Jul 2025 — Atual</span>
+          <h3 data-i18n="trajetoria.item3.role">Expert em Interação IV</h3>
+          <span class="tl-org">Teleperformance</span>
+          <ul data-i18n-list="trajetoria.item3.bullets">
+            <li>Atendimento e suporte ao cliente</li>
+            <li>Resolução de problemas técnicos e operacionais</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section id="skills" class="section">
+      <div class="section-head">
+        <span class="filetag" data-i18n="nav.skills">skills.json</span>
+        <h2 data-i18n="skills.title">Habilidades</h2>
+      </div>
+
+      <div class="skills-groups">
+        <div class="skills-group">
+          <span class="group-label" data-i18n="skills.g1">linguagens &amp; web</span>
+          <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Java</span>
+            <span class="tag">SQL</span>
+          </div>
+        </div>
+        <div class="skills-group">
+          <span class="group-label" data-i18n="skills.g2">dados &amp; integrações</span>
+          <div class="tags">
+            <span class="tag">MySQL</span>
+            <span class="tag">APIs REST</span>
+          </div>
+        </div>
+        <div class="skills-group">
+          <span class="group-label" data-i18n="skills.g3">ferramentas</span>
+          <div class="tags">
+            <span class="tag">Git</span>
+            <span class="tag">GitHub</span>
+            <span class="tag">VSCode</span>
+            <span class="tag">WordPress</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projetos" class="section">
+      <div class="section-head">
+        <span class="filetag" data-i18n="nav.projetos">projetos.md</span>
+        <h2 data-i18n="projetos.title">Projetos</h2>
+      </div>
+
+      <div class="projects">
+
+        <article class="project-card">
+          <div class="project-visual">
+            <span class="glow" style="background:var(--accent-2);"></span>
+            <img src="img/StudyTime.png" alt="Prévia do projeto StudyTime" class="project-img" loading="lazy" />
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <h3>StudyTime</h3>
+              <a class="project-url" href="https://studytime.vercel.app" target="_blank" rel="noopener noreferrer">
+                studytime.vercel.app
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+            <p data-i18n="projetos.p1desc">Aplicação web para organização e gerenciamento do tempo de estudo, desenvolvida com foco em produtividade e experiência do usuário.</p>
+            <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span></div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-visual">
+            <span class="glow" style="background:var(--accent-3);"></span>
+            <img src="img/CafeDoBom.png" alt="Prévia do projeto CaféDoBom" class="project-img" loading="lazy" />
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <h3>CaféDoBom</h3>
+              <a class="project-url" href="https://cafedobom.vercel.app" target="_blank" rel="noopener noreferrer">
+                cafedobom.vercel.app
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+            <p data-i18n="projetos.p2desc">Landing page responsiva com design moderno para apresentação de marca e produto, priorizando usabilidade e interface intuitiva.</p>
+            <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-visual">
+            <span class="glow" style="background:var(--accent);"></span>
+            <img src="img/MenuGo.png" alt="Prévia do projeto MenuGO" class="project-img" loading="lazy" />
+          </div>
+          <div class="project-body">
+            <div class="project-top">
+              <h3>MenuGO</h3>
+              <a class="project-url" href="https://app.menugo.pt" target="_blank" rel="noopener noreferrer">
+                app.menugo.pt
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </a>
+            </div>
+            <p data-i18n="projetos.p3desc">Sistema de delivery com fluxo de pedidos, controle de restaurantes e gestão da experiência do cliente, incluindo manutenção e evolução contínua da plataforma.</p>
+            <div class="project-tags"><span>JavaScript</span><span>SQL</span><span>APIs</span></div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="section">
+      <div class="section-head">
+        <span class="filetag" data-i18n="nav.contato">contato.md</span>
+        <h2 data-i18n="contato.title">Vamos conversar</h2>
+      </div>
+      <p class="contact-intro" data-i18n="contato.intro">Estou aberto a oportunidades como desenvolvedor júnior ou trainee. Se meu perfil combina com o que você procura, me chama em qualquer um dos canais abaixo.</p>
+
+      <div class="contact-grid">
+        <a class="contact-card" href="https://mail.google.com/mail/?view=cm&fs=1&to=kauaemanuel1210@gmail.com" target="_blank" rel="noopener noreferrer">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><polyline points="3 7 12 13 21 7"></polyline></svg></span>
+          <span>
+            <span class="label" data-i18n="contato.email">email</span>
+            <span class="value">kauaemanuel1210@gmail.com</span>
+          </span>
+        </a>
+        <a class="contact-card" href="https://wa.me/5584987653247?text=Ol%C3%A1%20Kau%C3%A3%2C%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar!" target="_blank" rel="noopener noreferrer">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .6 2.9a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.5 2.9.6a2 2 0 0 1 1.8 2.1z"></path></svg></span>
+          <span>
+            <span class="label" data-i18n="contato.telefone">telefone</span>
+            <span class="value">(84) 98765-3247</span>
+          </span>
+        </a>
+        <a class="contact-card" href="https://linkedin.com/in/kau%C3%A3-emanuel" target="_blank" rel="noopener noreferrer">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="7" r="1.4" fill="currentColor" stroke="none"></circle><line x1="6" y1="11" x2="6" y2="18"></line><path d="M11 18v-5a3 3 0 0 1 6 0v5"></path><line x1="11" y1="11" x2="11" y2="18"></line></svg></span>
+          <span>
+            <span class="label">LinkedIn</span>
+            <span class="value">/in/kauã-emanuel</span>
+          </span>
+        </a>
+        <a class="contact-card" href="https://github.com/kauaemanuel2" target="_blank" rel="noopener noreferrer">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 6 3 12 8 18"></polyline><polyline points="16 6 21 12 16 18"></polyline></svg></span>
+          <span>
+            <span class="label">GitHub</span>
+            <span class="value">/kauaemanuel2</span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#inicio" class="logo">&lt;KE/&gt;<span class="logo-cursor">_</span></a>
+          <p data-i18n="footer.tagline">Construindo interfaces e sistemas com atenção aos detalhes, do primeiro commit ao deploy.</p>
+          <div class="socials">
+            <a class="social-btn" href="https://github.com/kauaemanuel2" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Kauã Emanuel">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 6 3 12 8 18"></polyline><polyline points="16 6 21 12 16 18"></polyline></svg>
+            </a>
+            <a class="social-btn" href="https://linkedin.com/in/kau%C3%A3-emanuel" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Kauã Emanuel">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="7" r="1.4" fill="currentColor" stroke="none"></circle><line x1="6" y1="11" x2="6" y2="18"></line><path d="M11 18v-5a3 3 0 0 1 6 0v5"></path><line x1="11" y1="11" x2="11" y2="18"></line></svg>
+            </a>
+            <a class="social-btn" href="https://mail.google.com/mail/?view=cm&fs=1&to=kauaemanuel1210@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Enviar email para Kauã Emanuel pelo Gmail">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><polyline points="3 7 12 13 21 7"></polyline></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-nav">
+          <span class="footer-col-title" data-i18n="footer.navTitle">Navegação</span>
+          <div class="footer-links">
+            <a href="#inicio" data-i18n="nav.inicio">inicio.md</a>
+            <a href="#sobre" data-i18n="nav.sobre">sobre.md</a>
+            <a href="#trajetoria" data-i18n="nav.trajetoria">trajetoria.md</a>
+            <a href="#projetos" data-i18n="nav.projetos">projetos.md</a>
+            <a href="#contato" data-i18n="nav.contato">contato.md</a>
+          </div>
+        </div>
+
+        <div class="footer-contact">
+          <span class="footer-col-title" data-i18n="footer.contactTitle">Contato</span>
+          <div class="footer-links">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kauaemanuel1210@gmail.com" target="_blank" rel="noopener noreferrer">kauaemanuel1210@gmail.com</a>
+            <a href="https://wa.me/5584987653247?text=Ol%C3%A1%20Kau%C3%A3%2C%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar!" target="_blank" rel="noopener noreferrer">(84) 98765-3247</a>
+            <a href="https://linkedin.com/in/kau%C3%A3-emanuel" target="_blank" rel="noopener noreferrer">linkedin.com/in/kauã-emanuel</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Kauã Emanuel Feliciano dos Santos · <span data-i18n="footer.rights">todos os direitos reservados</span></span>
+        <span data-i18n="footer.built">Desenvolvido por mim :)</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+  </button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
