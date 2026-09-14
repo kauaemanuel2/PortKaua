@@ -200,10 +200,8 @@
   });
 
   /* ---------------------------------------------
-     SMOOTH SCROLL SEM HASH NA URL
-     Intercepta cliques em links âncora, faz scroll
-     suave manualmente e limpa a hash da barra de endereços.
-  --------------------------------------------- */
+     SEM HASH NA URL
+     ---------------------- */
   function cleanUrl(){
     if (window.history && window.history.replaceState){
       try {
@@ -232,8 +230,7 @@
     cleanUrl();
   });
 
-  // Se a página carregar já com uma hash na URL (ex: link compartilhado
-  // com #projetos), mantém o scroll inicial mas limpa a barra de endereços.
+  
   if (window.location.hash){
     setTimeout(cleanUrl, 60);
   }
